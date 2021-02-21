@@ -41,7 +41,7 @@ As **state regulation** and **GDP per capita** plays a significant role in **par
 
 However, a handshake with the official will not suffice. For 2021 admission year, many universities have waived the requirement to take SAT or ACT as a standard of admission due to the extra difficulty for students to prepare and sit on the test. Therefore, College Board needs to redefine standardised test to not only act as a fair hurdle for everyone to participate in tertiary education, but also to prepare them for the university. Finally, SAT delivery format needs to be readjusted to be more accessible for students especially during the time of pandemic.
 
-Presentation slide [link](./SAT_ ACT_Participation_Rate_Analysis.pdf)
+Presentation slide [link](SAT_ ACT_Participation_Rate_Analysis.pdf)
 
 ## Data Dictionary
 
