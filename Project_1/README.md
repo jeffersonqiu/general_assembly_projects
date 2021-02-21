@@ -29,7 +29,7 @@ Finally, **socio-economic landscape of the state**, being viewed from GDP per ca
 
 It is also noted that **geographical area** of the state matters in terms of test preference as coastal area tends to have a higher SAT participation rate while landlocked states usually prefers ACT tests.
 
-![map scale](/data/Map scale.jpeg)
+![map scale](./data/Map scale.jpeg)
 ![US SAT map](/data/Map SAT PR.jpeg)
 ![US ACT map](/data/Map ACT PR.jpeg)
 
@@ -63,8 +63,8 @@ However, a handshake with the official will not suffice. For 2021 admission year
 
 ## References
 
-[SAT data in 2017 and 2018](https://blog.collegevine.com/here-are-the-average-sat-scores-by-state/)
-[ACT data in 2017](https://www.act.org/content/dam/act/unsecured/documents/cccr2017/ACT_2017-Average_Scores_by_State.pdf)
-[ACT data in 2018](https://www.act.org/content/dam/act/unsecured/documents/cccr2018/Average-Scores-by-State.pdf)
-[List of states requiring SAT/ ACT test](https://www.testive.com/state-sat-act/)
-[US States GDP in 2018](https://www.bea.gov/data/gdp/gross-domestic-product)
+[SAT data in 2017 and 2018](https://blog.collegevine.com/here-are-the-average-sat-scores-by-state/)<br>
+[ACT data in 2017](https://www.act.org/content/dam/act/unsecured/documents/cccr2017/ACT_2017-Average_Scores_by_State.pdf)<br>
+[ACT data in 2018](https://www.act.org/content/dam/act/unsecured/documents/cccr2018/Average-Scores-by-State.pdf)<br>
+[List of states requiring SAT/ ACT test](https://www.testive.com/state-sat-act/)<br>
+[US States GDP in 2018](https://www.bea.gov/data/gdp/gross-domestic-product)<br>
