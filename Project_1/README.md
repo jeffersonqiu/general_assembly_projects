@@ -29,7 +29,7 @@ Finally, **socio-economic landscape of the state**, being viewed from GDP per ca
 
 It is also noted that **geographical area** of the state matters in terms of test preference as coastal area tends to have a higher SAT participation rate while landlocked states usually prefers ACT tests.
 
-![map scale](./data/Map scale.jpeg)
+![map scale](data/Map scale.jpeg)
 ![US SAT map](/data/Map SAT PR.jpeg)
 ![US ACT map](/data/Map ACT PR.jpeg)
 
