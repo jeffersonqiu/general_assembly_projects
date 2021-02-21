@@ -12,7 +12,7 @@ As an effort to curb growing popularity of ACT test in recent years, the College
 
 It is observed that ACT is a more popular test than is SAT. However, SAT participation rates has improves year-on-year for most states while the opposite is true for ACT. This may likely mean the change in SAT format in 2016 has successfully entice more students to take the test.
 
-![ACT and SAT distribution](/data/ACT-SAT distribution.png)
+![ACT and SAT distribution](/data/ACT-SAT_distribution.png)
 
 On another note, **states regulations still plays a significant role** in determining participation rates of the tests. Colorado and Illinois for example, experienced a drastic increase in SAT participation rate in 2018 as state-administered SAT test is rolled out.
 
@@ -20,7 +20,7 @@ Interesting to note, however, for **state which administered both tests**, parti
 
 Based on the high **negative correlation between participation rate of both tests**, it can be deduced that students tends to focus on **one test over the other** based on popularity within the states.
 
-![Negative Correlation of Participation Rates of Both Tests](/data/Scatter Plot PR.png)
+![Negative Correlation of Participation Rates of Both Tests](/data/Scatter_Plot_PR.png)
 
 On another note, **participation rate is also negatively correlated to the test score**. This phenomenon may be attributed to
 **selection bias** within the state as data may only reflect students from higher socio-economic class or more academically inclined which may afford to prepare and take test less popular in their state.
@@ -29,9 +29,9 @@ Finally, **socio-economic landscape of the state**, being viewed from GDP per ca
 
 It is also noted that **geographical area** of the state matters in terms of test preference as coastal area tends to have a higher SAT participation rate while landlocked states usually prefers ACT tests.
 
-![map scale](./data/Map_scale.jpeg)
-![US SAT map](/data/Map SAT PR.jpeg)
-![US ACT map](/data/Map ACT PR.jpeg)
+![map scale](./data/Map_scale.jpeg)<br>
+![US SAT map](./data/Map_SAT_PR.jpeg)<br>
+![US ACT map](/data/Map_ACT_PR.jpeg)
 
 ## Conclusion and Recommendation
 
