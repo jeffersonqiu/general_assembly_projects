@@ -20,17 +20,19 @@ Interesting to note, however, for **state which administered both tests**, parti
 
 Based on the high **negative correlation between participation rate of both tests**, it can be deduced that students tends to focus on **one test over the other** based on popularity within the states.
 
-![Negative Correlation of Participation Rates of Both Tests](./data/Scatter_Plot_PR.png)
+![Negative Correlation of Participation Rates of Both Tests](./data/Scatter_Plot PR.png)
 
 On another note, **participation rate is also negatively correlated to the test score**. This phenomenon may be attributed to
 **selection bias** within the state as data may only reflect students from higher socio-economic class or more academically inclined which may afford to prepare and take test less popular in their state.
 
 Finally, **socio-economic landscape of the state**, being viewed from GDP per capita point of view has some correlation to the test participation rate. States in **bottom 50% of GDP per capita** with **no SAT/ ACT requirements** tends to prefer **ACT test**.
 
+![US SAT map](./data/Map_SAT_PR.jpeg)<br>
+
 It is also noted that **geographical area** of the state matters in terms of test preference as coastal area tends to have a higher SAT participation rate while landlocked states usually prefers ACT tests.
 
 ![map scale](./data/Map_scale.jpeg)<br>
-![US SAT map](./data/Map_SAT_PR.jpeg)<br>
+
 ![US ACT map](./data/Map_ACT_PR.jpeg)
 
 ## Conclusion and Recommendation
