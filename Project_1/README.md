@@ -27,8 +27,6 @@ On another note, **participation rate is also negatively correlated to the test 
 
 Finally, **socio-economic landscape of the state**, being viewed from GDP per capita point of view has some correlation to the test participation rate. States in **bottom 50% of GDP per capita** with **no SAT/ ACT requirements** tends to prefer **ACT test**.
 
-
-
 It is also noted that **geographical area** of the state matters in terms of test preference as coastal area tends to have a higher SAT participation rate while landlocked states usually prefers ACT tests.
 
 ![map scale](./data/Map_scale.jpeg)<br>
@@ -42,6 +40,8 @@ It is also noted that **geographical area** of the state matters in terms of tes
 As **state regulation** and **GDP per capita** plays a significant role in **participation rate**, it is recommended to invest resources in the state with currently **no state regulation and low GDP per capita**. For example, **New Mexico** currently has no state requirement on SAT/ ACT test (SAT participation rate in 2018: 18%), low GDP (within bottom 50% in US) and high degree of inequality (gini coefficient). This makes New Mexico a suitable state to focus College Board resources on as students in the states are likely to be **cost sensitive** and will be willing to make a switch if the state agree to bear the cost.
 
 However, a handshake with the official will not suffice. For 2021 admission year, many universities have waived the requirement to take SAT or ACT as a standard of admission due to the extra difficulty for students to prepare and sit on the test. Therefore, College Board needs to redefine standardised test to not only act as a fair hurdle for everyone to participate in tertiary education, but also to prepare them for the university. Finally, SAT delivery format needs to be readjusted to be more accessible for students especially during the time of pandemic.
+
+Presentation slide [link](./SAT_ ACT_Participation_Rate_Analysis.pdf)
 
 ## Data Dictionary
 
