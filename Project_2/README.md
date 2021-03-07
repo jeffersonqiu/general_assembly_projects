@@ -1,0 +1,100 @@
+# Introduction
+
+House purchase is one of the biggest spending in most of people's life. It is uncommon for people to spend decades to fully paid the loan of their first house. This leads many first time buyers to have no/ little idea on the fair price of an estate as there are plenty of factors to consider. In this project, I will attempt to build a House Price prediction model using data obtained from historical property transaction in Ames, Iowa from 2006 and 2010. The dataset is obtained from a 2018 Kaggle 'DSI-US-6 Project 2 Regression Challenge' [link](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge).
+
+The data consists of 2051 transactions with 80 features consisting of 23 nominal (categorical features with no particular order), 23 ordinal (categorical features with some natural order), 14 discrete (numerical features but within some intervals) and 20 continuous variables (numerical features with no particular binning and can take any value). The full data dictionary can be seen [here](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt).
+
+## Problem Statement
+
+The objective of the study is two folds:
+- First, to create a prediction model that accurately predict house price with reasonable error margin
+- Second, to ensure that the model generalized well to perform equally well on the data points it never see before
+
+Apart from these two objectives, I wish to obtain some insights on:
+- Which features significantly affects the house price?
+    - To help buyer and seller alike to understand which feature of the house is crucial to determine the house price
+- Is there any close correlation between different features?
+    - To optimize data collection effort in the future to build a better price prediction model
+
+## Executive Summary
+
+In this project, I attempted to create a prediction model to fulfil the objective mentioned previously using Linear Regression model. Linear Regression is an approach to model a relationship between a scalar continuous target variable from explanatory variables associated with it ([source](https://en.wikipedia.org/wiki/Linear_regression)).
+
+The simplest form of linear regression can be formulated into a line equation of *y=mx+c* for a single predictor feature (*x*) to predict target variable (*y*). In this simple example, the model will 'learn' by fitting the predicted *y* to the actually *y* by adjusting the value of *m* (gradient) and *c* (intercept). So superimpose it to our problem, the model will generally take a form of *SalePrice* = *Gradient* x *X* + *Intercept* with *X* is an array containing the explanatory variables values. From now on, these explanatory variables will be referred to as *features* or *variables* for brevity.
+
+However, as linear regression only take in numerical values for its features to ensure that we can do the modelling. Another issue we may encounter is the fact that we have 80 features, which may cause us to overfit the data instead of having a generalized predictor for the SalePrice value. Therefore a set of strategy will be set to overcome this problem elaborated in the [Proposed Approach](#Proposed-Approach) section.
+
+## Proposed Approach
+
+In general, the strategy we have in addressing the issues above are:
+**1. Linear Regression only takes numerical values to model**
+- Categorical features (nominal and ordinal) will be converted into some numerical representation by the means of One Hot Encoding (binarize the category into an array of 1 and 0 to represent the feature) or Ordinal Encoding (convert category to numerical values which retains the order of category).
+
+**2. Selection of significant features**
+- Remove features with majority counts for a single category. This feature may not provide extra information as most data falls under the same category.
+- Remove features with high correlation with one another. However, to ensure that important information is retained, one of the feature will be retained.
+- Regularization using Lasso, Ridge and Elastic Net to penalize having unnecessary features.
+
+The approach I take to perform the feature selection (especially true for the first two points) is to be as objective as possible by parameterizing the model and perform a grid search over a range of values to obtain the best parameter for the model. These high level parameters are contained in section [Parameter Setting](#Parameter-Setting), subsequently.
+
+# Summary
+
+## Parameter Setting
+
+Best Parameter resulting in most optimum model based on bias and variance trade-off:
+
+*For feature selection*
+- No feature with a single category with counts more than 70%
+- No feature before polynomial features has pairwise collinearity of more than 90%
+- No feature after polynomial features has pairwise collinearity of more than 90%<br>
+
+*For polynomial feature*
+- No root and logarithm terms are included in the final selected features based on correlation to the target variable.
+- Best performance is obtained when polynomial features is set for degree=2 which includes quadratic and interraction term of original features.
+
+## Effect of Outlier
+
+The presence of outlier tend to result in a model with high variance. Therefore, two sets of predictions are generated and submitted to Kaggle to verify the efficacy of model train with and without outlier in the training dataset. The result for each submission are as follows:
+
+**Model 1**: *Model trained with outlier data*
+- Training set RMSE: 25,530.4
+- Validation set RMSE: 30,053.3
+- Kaggle Private RMSE: 26,883.9
+- Kaggle Public RMSE: 27,134.1
+
+**Model 2**: *Model trained without outlier data*
+- Training set RMSE: 23,988.2
+- Validation set RMSE: 23,656.6
+- Kaggle Private RMSE: 31,175.9
+- Kaggle Public RMSE: 24,303.5
+
+Before removal of the outlier data, the model shows some overfitting as RMSE on the validation set is observably higher than on the training set itself. However, it performs generally well in terms of variance for private and public Kaggle RMSE.
+
+After the removal of outlier data, the model showed some improvement on training and validation dataset while performed poorly on Kaggle Private set. This is likely due to the possibility that Kaggle Private dataset may contain some outlier that the model has not been trained for.
+
+**Model 1** is eventually used as the final model as it generalize better and performs with lesser variance across different dataset with the cost of slight increase in bias.
+
+## Feature Selection and Interpretability
+
+The best performing model has been trained using features created by polynomial feature application. This features are in the form of quadratic (x1^2) and interaction (x1 * x2) terms of the original features. Despite producing a reasonably good predictor model, this model is difficult to interpret.
+
+On the other hand, opting not to include quadratic or interaction terms resulting in a more interpretable model, showing most important features and its interaction with the house's Sale Price. The most important features based on the best performing model are:
+- Overall Quality ('Overall Qual')
+- Above Grade Living Area ('Gr Liv Area')
+- Garage Area ('Garage Area')
+- Likeliness that the house is expensive based on Liv Area of the house and whether the kitchen, exterior or basement quality of the house is excellent ('likely_exp')
+
+The lasso model also able to further reduce the features from 25 numerical and 5 categorical to 15 numerical and 4 categorical. The plot below shows the selected features and their respective coefficient without Polynomial Feature generation.
+
+![plot](./pics/coef_plot.png)
+
+# Conclusion
+
+We start with a dataset containing 80 sets with the goal to create accurate yet generalize prediction model. After performing data cleaning, feature engineering, feature elimination (through majority counts, collinearity and regularization), we manage to create a model with relatively low bias score and generelized well across different dataset.
+
+Even more importantly than being able to create a prediction model is the insight on which parameter will strongly affect the House selling price. For example, a house owner may want to invest certain amount of money to improve overall condition of the house or increase the size of garage to fit more than a car before selling the house. Understanding from the model also will provide a good estimate of how much money should the house owner invest on to make the investment worthwhile considering the potential return.
+
+**Model Limitation and Recommendation:**
+- The choice of Ordinal Encoding to convert categorical feature numeric prevent us to obtain insight on particular category in the feature is important on the Sale Price. For example, if we know that exterior quality is important, than what kind of exterior quality a house owner need to renovate his house to to maximize his potential sale price.
+- More selection of categorical variables into the pool to see which other variable may be significant since Lasso regularization has reduced total variable from 30 to 19.
+- To examine closer on the five assumptions of linearity regression and if linear regression model is well-poised for this problem.
